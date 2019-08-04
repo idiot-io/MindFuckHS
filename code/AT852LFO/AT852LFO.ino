@@ -106,7 +106,7 @@ ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
   //Count up and toggle portB bits
   if (oscCounter1 > oscFreq1) {
     oscCounter1 = 0;
-    PORTB ^= (_BV(PB0));
+    PORTB ^= (_BV(PB1));
 
     //Bonus: toggle pin 2 also if state is true
     if (oscState == true) {
@@ -117,7 +117,7 @@ ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
 
   if (oscCounter2 > oscFreq2) {
     oscCounter2 = 0;
-    PORTB ^= (_BV(PB1));
+    PORTB ^= (_BV(PB0));
 
     //Bonus: toggle pin 2 also if state is true
     if (oscState == true) {
