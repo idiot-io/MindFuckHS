@@ -57,13 +57,13 @@
 //Ranges for the pot.  Technically a small number means a
 //shorter timer so low or high...whatever you want to call it.
 
-#define VCO1HIGH 10//10
-#define VCO1LOW 200//200
+#define VCO1HIGH 10//10/15/5
+#define VCO1LOW 200//200/25/118
 
 #define VCO2HIGH 10//10
 #define VCO2LOW 200//200
 
-#define MIX_LFO 500 // Make larger for longer alt sounds on PB2
+#define MIX_LFO 1000 // Make larger for longer alt sounds on PB2
 
 //counters for the frequencies
 byte oscFreq1 = 0;
@@ -90,8 +90,8 @@ void setup() {
   TCCR1 = 0;                  //stop the timer
   TCNT1 = 0;                  //zero the timer
 
-  OCR1A = 50;     //50           //set the compare value
-  OCR1C = 50;       //50         //set the compare value  ??? needed
+  OCR1A = 200;     //50           //set the compare value
+  OCR1C = 200;       //50         //set the compare value  ??? needed
 
   TIMSK = _BV(OCIE1A);        //interrupt on Compare Match A
 
@@ -106,7 +106,7 @@ ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
   //Count up and toggle portB bits
   if (oscCounter1 > oscFreq1) {
     oscCounter1 = 0;
-    PORTB ^= (_BV(PB1));
+    PORTB ^= (_BV(PB0));
 
     //Bonus: toggle pin 2 also if state is true
     if (oscState == true) {
@@ -117,7 +117,7 @@ ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
 
   if (oscCounter2 > oscFreq2) {
     oscCounter2 = 0;
-    PORTB ^= (_BV(PB0));
+    PORTB ^= (_BV(PB1));
 
     //Bonus: toggle pin 2 also if state is true
     if (oscState == true) {
@@ -139,14 +139,14 @@ ISR(TIMER1_COMPA_vect)          // timer compare interrupt service routine
 
 void readVco1freq () {
   int osc1_t = 0;
-  f1Sample[counter] = analogRead(A3);
+  f1Sample[counter] = analogRead(A2);
   osc1_t = (f1Sample[0] + f1Sample[1] + f1Sample[2] + f1Sample[3]) >> 2;
   oscFreq1 = map(osc1_t, 0, 1023, VCO1LOW ,  VCO1HIGH);
 }
 
 void readVco2freq () {
   int osc1_t = 0;
-  f2Sample[counter] = analogRead(A2);
+  f2Sample[counter] = analogRead(A3);
   osc1_t = (f2Sample[0] + f2Sample[1] + f2Sample[2] + f2Sample[3]) >> 2;
   oscFreq2 = map(osc1_t, 0, 1023, VCO2LOW,  VCO2HIGH);
 }
