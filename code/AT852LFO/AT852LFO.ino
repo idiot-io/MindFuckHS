@@ -57,11 +57,11 @@
 //Ranges for the pot.  Technically a small number means a
 //shorter timer so low or high...whatever you want to call it.
 
-#define VCO1HIGH 10//10/15/5
-#define VCO1LOW 200//200/25/118
+#define VCO1HIGH 10//111Hz - 10/15/5
+#define VCO1LOW 200//6.2Hz - 200/25/118
 
-#define VCO2HIGH 10//10
-#define VCO2LOW 200//200
+#define VCO2HIGH 10//111Hz - 10/15/5
+#define VCO2LOW 200//6.2Hz - 20025/118 
 
 #define MIX_LFO 1000 // Make larger for longer alt sounds on PB2
 
