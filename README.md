@@ -1,2 +1,1 @@
-# MindFuckHS
 ![instructions](instructions.svg)
