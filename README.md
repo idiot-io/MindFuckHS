@@ -1,1 +1,1 @@
-![instructions](instructions.svg)
+![instructions](docs/instructions.svg)
