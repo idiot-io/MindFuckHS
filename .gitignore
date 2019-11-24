@@ -31,4 +31,5 @@ eagle.epf
 *.lck
 
 .svg2shenzhen-cache
-.fp-
+hardware/kicad/fp*
+hardware/kicad/plot
