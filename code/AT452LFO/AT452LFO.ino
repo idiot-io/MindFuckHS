@@ -90,8 +90,8 @@ void setup() {
   TCCR1 = 0;                  //stop the timer
   TCNT1 = 0;                  //zero the timer
 
-  OCR1A = 200;     //200           //set the compare value
-  OCR1C = 200;       //200        //set the compare value  ??? needed
+  OCR1A = 220;     //200           //set the compare value
+  OCR1C = 220;       //200        //set the compare value  ??? needed
 
   TIMSK = _BV(OCIE1A);        //interrupt on Compare Match A
 
