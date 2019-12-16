@@ -57,10 +57,10 @@
 //Ranges for the pot.  Technically a small number means a
 //shorter timer so low or high...whatever you want to call it.
 
-#define VCO1HIGH 3//111Hz - 10/15/5
+#define VCO1HIGH 20//111Hz - 10/15/5
 #define VCO1LOW 180//6.2Hz - 200/25/118
 
-#define VCO2HIGH 3//111Hz - 10/15/5
+#define VCO2HIGH 20//111Hz - 10/15/5
 #define VCO2LOW 180//6.2Hz - 200/25/118 
 
 #define MIX_LFO 10 // Make larger for longer alt sounds on PB2
@@ -90,12 +90,12 @@ void setup() {
   TCCR1 = 0;                  //stop the timer
   TCNT1 = 0;                  //zero the timer
 
-  OCR1A = 220;     //200           //set the compare value
-  OCR1C = 220;       //200        //set the compare value  ??? needed
+  OCR1A =220;     //200           //set the compare value
+  OCR1C =220;       //200        //set the compare value  ??? needed
 
   TIMSK = _BV(OCIE1A);        //interrupt on Compare Match A
 
-  TCCR1 = _BV(CTC1) | _BV(CS11); // Start timer, ctc mode, prescaler clk/2
+  TCCR1 = _BV(CTC1)| _BV(CS11); //11 Start timer, ctc mode, prescaler clk/2
 
   interrupts();             // enable all interrupts
 }

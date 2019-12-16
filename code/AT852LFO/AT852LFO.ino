@@ -141,7 +141,7 @@ void readVco1freq () {
   int osc1_t = 0;
   f1Sample[counter] = analogRead(A2);
   osc1_t = (f1Sample[0] + f1Sample[1] + f1Sample[2] + f1Sample[3]) >> 2;
-  oscFreq1 = map(osc1_t, 0, 1023, VCO1LOW ,  VCO1HIGH);
+  oscFreq1 = map(osc1_t, 1023, 0, VCO1LOW ,  VCO1HIGH);
 }
 
 void readVco2freq () {
