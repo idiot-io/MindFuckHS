@@ -11,7 +11,10 @@ you can find its location in the`Preferences` tab.
 close all arduino instances and remove (after backup) your arduino profile folder.  
 restart arduino 1.8.13 and go back to Preferences. 
 
-add ATTinyCore board repo to the `Additional Boards Manager URLs:` list  
+**add**  [ATTinyCore](https://github.com/SpenceKonde/ATTinyCore) board repo to the `Additional Boards Manager URLs:` list  
+
+`http://drazzy.com/package_drazzy.com_index.json`
+
 <img src="https://user-images.githubusercontent.com/222526/114276819-03a2ad80-9a31-11eb-81dc-36c7738a49d7.png" width=50%>
 
 you are now ready to upload , if you want to recompile, go to Compile section.
